@@ -1,18 +1,24 @@
 class Solution:
-    def isTrionic(self, nums: list[int]) -> bool:
-        n = len(nums)
-        i = 1
-
-        while i < n and nums[i - 1] < nums[i]:
-            i += 1
-        p = i - 1
-
-        while i < n and nums[i - 1] > nums[i]:
-            i += 1
-        q = i - 1
-
-        while i < n and nums[i - 1] < nums[i]:
-            i += 1
-        flag = i - 1
-
-        return (p != 0) and (q != p) and (flag == n - 1 and flag != q)
+    def istrionic(self,num:list[int]) ->bool:
+        n=len[num]
+        i=1
+        if n<3:
+            return False
+        
+        while i<n and num[i]<num[i-1]:
+            i+=1
+            
+        if i==1 or i==n:
+            return False
+        
+        while i<n and num[i]>num[i-1]:
+            i+=1
+            
+        if i==1 or i==n:
+            return False
+        
+        while i<n and num[i]>num[i-1]:
+            i+=1
+            
+        if i==1:
+            return True
