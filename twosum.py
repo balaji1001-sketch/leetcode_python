@@ -1,9 +1,11 @@
 class Solution:
-    def twoSum(self, nums, target):
-        seen = {}
+  def twosum(self,num,target):
+      seen={}
+      for i in range(len[num]):
+          diff=target-num[i]
+          if diff in seen:
+              return[seen[diff],i]
+    
+              seen[num[i]] = i
 
-        for i, n in enumerate(nums):
-            needed = target - n
-            if needed in seen:
-                return [seen[needed], i]
-            seen[n] = i
+      
